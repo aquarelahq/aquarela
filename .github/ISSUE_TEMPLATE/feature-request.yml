@@ -1,0 +1,29 @@
+name: "🚀 Feature request"
+description: Propose a new feature or idea for Aquarela
+labels: [enhancement]
+body:
+  - type: textarea
+    id: feature-request
+    validations:
+      required: true
+    attributes:
+      label: Feature request
+      description: A clear and short description of what you propose.
+
+  - type: textarea
+    id: motivation
+    validations:
+      required: true
+    attributes:
+      label: Motivation
+      description: |
+        What problem does it solve? For example, "When I label drone photos I
+        always have to...". Link related issues if there are any.
+
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Your contribution
+      description: |
+        Could you help, for example by testing it or by opening a PR once the
+        idea is approved? Read the [contributing guide](https://github.com/aquarelahq/aquarela/blob/main/CONTRIBUTING.md) first.
