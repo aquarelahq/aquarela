@@ -9,7 +9,7 @@ links to its issue, and the issues of a version are grouped in a
 
 - [x] Image canvas with pan, zoom and boxes
 - [x] [API](docs/api.md) and [data model](docs/data-model.md)
-- [x] Rust server skeleton and CI ([#3](https://github.com/aquarelahq/aquarela/issues/3))
+- [x] Server skeleton and CI ([#3](https://github.com/aquarelahq/aquarela/issues/3))
 - [ ] SQLite schema ([#4](https://github.com/aquarelahq/aquarela/issues/4))
 - [ ] Projects and classes API ([#5](https://github.com/aquarelahq/aquarela/issues/5))
 - [ ] Images API ([#6](https://github.com/aquarelahq/aquarela/issues/6))
@@ -18,7 +18,7 @@ links to its issue, and the issues of a version are grouped in a
 - [ ] Web app served from the binary ([#9](https://github.com/aquarelahq/aquarela/issues/9))
 - [ ] Polygons and points
 - [ ] Export to YOLO and COCO
-- [ ] Docker image and single binary
+- [ ] Docker image and `uvx aquarela`
 
 ## v0.2. Label together
 

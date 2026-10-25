@@ -53,19 +53,20 @@ Everything is MIT licensed.
 
 Aquarela has two parts.
 
-### Core (Rust)
+### Core (Python)
 
-One program that holds everything. It ships as a Docker image and as a single
-binary.
+One program that holds everything. It ships as a Docker image and as the
+`aquarela` package on PyPI, so it runs with `uvx aquarela`.
 
-- **HTTP and WebSocket server** with axum. Serves the API, the live sync channel
-  and the web app itself (embedded in the binary).
+- **HTTP and WebSocket server** with FastAPI. Serves the API, the live sync
+  channel and the web app itself (bundled in the package).
 - **Storage.** SQLite by default, Postgres for teams. Images live on disk or in
   any S3 compatible bucket the user points to. Images are never copied anywhere
   else.
 - **Sync.** Each image's annotations are a Yjs document, handled on the server
-  by `yrs`, the official Rust port. Clients send small updates, the server
-  merges and persists them, and broadcasts them to everyone on that image.
+  by `pycrdt`, the Python bindings of the official Rust port. Clients send
+  small updates, the server merges and persists them, and broadcasts them to
+  everyone on that image.
 - **Export.** YOLO, COCO and Pascal VOC writers.
 
 ### Web app (TypeScript)
@@ -74,8 +75,9 @@ binary.
   shapes per image.
 - Labels are edited in a local Yjs document stored in IndexedDB, so the app
   keeps working offline and syncs when the connection returns.
-- Shared logic (geometry, format conversion) is written once in Rust and
-  compiled to WebAssembly so the browser and the server behave the same.
+- Shared logic (geometry, format conversion) is written in TypeScript for the
+  browser and in Python for the server, and both are tested against the same
+  fixtures.
 
 ### Canvas
 
@@ -137,7 +139,7 @@ With Docker:
 docker run -p 8080:8080 -v ~/aquarela-data:/data ghcr.io/aquarelahq/aquarela
 ```
 
-Without Docker, download the binary for your system and run `aquarela`.
+Without Docker, run `uvx aquarela`.
 
 Larger teams use the Docker Compose file in `deploy/`, which adds Postgres and
 an optional S3 bucket.
@@ -157,14 +159,14 @@ The first release is deliberately small and complete.
 - Image projects from a local folder.
 - Boxes, polygons and points, with classes and hotkeys.
 - Export to YOLO and COCO.
-- Docker image and single binary.
+- Docker image and `uvx aquarela`.
 
 The sync layer is designed in from day one so collaboration in v0.2 does not
 require a rewrite.
 
 ## Plan
 
-- Weeks 1 to 2. Rust core skeleton, project and image API, SQLite, web app
+- Weeks 1 to 2. Python core skeleton, project and image API, SQLite, web app
   showing images and drawing boxes.
 - Weeks 3 to 4. Polygons, points, classes, hotkeys, export.
 - Week 5. Docker image, binaries, docs, demo video. Release v0.1 and share it.
@@ -183,7 +185,7 @@ after v0.2, on top of the collaboration core.
 ## Repository layout
 
 ```
-core/        Rust workspace (server, sync, storage, export)
+core/        Python package (server, sync, storage, export)
 web/         TypeScript web app
 deploy/      Dockerfile, Compose files
 docs/        Documentation (API, data model)

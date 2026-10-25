@@ -18,10 +18,10 @@ jobs:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v10.3.2
       - run: uv build
-        working-directory: python
+        working-directory: core
       - uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: python/dist
+          packages-dir: core/dist
 
   npm:
     runs-on: ubuntu-latest

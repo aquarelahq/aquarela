@@ -128,26 +128,26 @@ npm run dev      # http://localhost:5173
 npm run build    # type check and production build, the same check CI runs
 ```
 
-### Core (Rust)
+### Core (Python)
 
 ```bash
 cd core
-cargo run        # http://127.0.0.1:8080/api/health
-cargo test
+uv run aquarela  # http://127.0.0.1:8080/api/health
+uv run pytest
 ```
 
 Before opening a pull request, run the same checks as CI:
 
 ```bash
-cargo fmt --check
-cargo clippy --all-targets -- -D warnings
-cargo test
+uv run ruff format --check .
+uv run ruff check .
+uv run pytest
 ```
 
 ## Code style
 
 - **TypeScript.** Strict mode, function components, and no `any`.
-- **Rust.** Format with `rustfmt` and fix every `clippy` warning.
+- **Python.** Format and lint with `ruff`, and type hints on every function.
 - **Comments.** Short, and only where the code does not explain itself.
 - **Coordinates.** Labels are always stored in image pixels, never screen
   pixels.
@@ -158,7 +158,7 @@ Only the maintainer releases.
 
 1. Move the `[Unreleased]` items in `CHANGELOG.md` to a new version with
    today's date.
-2. Bump the version in `python/pyproject.toml`, `npm/package.json` and
+2. Bump the version in `core/pyproject.toml`, `npm/package.json` and
    `rust/Cargo.toml`.
 3. Commit with the message `chore: release X.Y.Z`, then tag and push:
 
