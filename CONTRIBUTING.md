@@ -42,14 +42,39 @@ Every change, including the maintainer's, follows these steps.
    - `feat/polygon-tool`
    - `fix/zoom-on-safari`
    - `docs/export-formats`
-4. **Commit.** Write each message as one short sentence in English, in the
-   imperative, with no prefix. For example, `Add polygon tool` or
-   `Fix zoom jumping on Safari`.
+4. **Commit** following
+   [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+   Write `type(scope): description` in English, in the imperative and in
+   lowercase:
+
+   ```
+   feat(web): add polygon tool
+   fix(web): stop zoom jumping on Safari
+   docs: describe export formats
+   ```
+
+   | Type | Use it for |
+   |---|---|
+   | `feat` | A new feature |
+   | `fix` | A bug fix |
+   | `docs` | Documentation only |
+   | `refactor` | Code changes that neither fix a bug nor add a feature |
+   | `perf` | Performance |
+   | `test` | Tests |
+   | `build` | Dependencies and build setup |
+   | `ci` | GitHub Actions |
+   | `chore` | Anything else, such as releases |
+
+   The scope is optional and names the part touched: `web`, `core` or
+   `deploy`. A breaking change adds `!` after the type, as in
+   `feat(core)!: rename the shapes field`, and explains it in the body under
+   `BREAKING CHANGE:`.
 5. **Update the records.**
    - Add a line under `[Unreleased]` in `CHANGELOG.md`.
    - Tick the box in `ROADMAP.md` if the change finishes an item.
 6. **Open a pull request** to `main`, linked to its issue. Keep it small: one
-   change per pull request.
+   change per pull request. Its title follows the same commit format, because
+   it becomes the commit message on `main`.
 7. **Checks and review.** CI must pass, and the maintainer reviews and merges
    with squash, so each pull request becomes one commit on `main`.
 
@@ -87,7 +112,7 @@ Only the maintainer releases.
    today's date.
 2. Bump the version in `python/pyproject.toml`, `npm/package.json` and
    `rust/Cargo.toml`.
-3. Commit with the message `Release X.Y.Z`, then tag and push:
+3. Commit with the message `chore: release X.Y.Z`, then tag and push:
 
    ```bash
    git tag vX.Y.Z && git push origin main --tags
