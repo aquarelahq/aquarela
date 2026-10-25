@@ -1,0 +1,30 @@
+# Fails when a pull request changes more than 400 lines, unless the
+# maintainer adds the size/exception label. Lockfiles and generated files
+# do not count.
+name: PR size
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  size:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          EXCEPTION: ${{ contains(github.event.pull_request.labels.*.name, 'size/exception') }}
+        run: |
+          lines=$(gh api "repos/$REPO/pulls/$PR/files" --paginate \
+            --jq '.[] | select(.filename | test("(package-lock\\.json|Cargo\\.lock|uv\\.lock|\\.snap)$|(^|/)(dist|generated)/") | not) | .additions + .deletions' \
+            | awk '{s += $1} END {print s + 0}')
+          echo "Changed lines (without lockfiles and generated files) $lines"
+          if [ "$lines" -gt 400 ] && [ "$EXCEPTION" != "true" ]; then
+            echo "::error::This pull request changes $lines lines, over the 400 line limit. Split it into smaller pull requests."
+            exit 1
+          fi
