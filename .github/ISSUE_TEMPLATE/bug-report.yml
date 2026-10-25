@@ -1,0 +1,55 @@
+name: "🐛 Bug report"
+description: Something in Aquarela does not work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report a bug.
+
+  - type: textarea
+    id: reproduction
+    validations:
+      required: true
+    attributes:
+      label: Reproduction
+      description: |
+        The steps that make the bug happen, what you expected and what you saw
+        instead. Paste errors and logs as text in code blocks, not screenshots.
+      value: |
+        1.
+        2.
+        3.
+
+        Expected:
+
+        Actual:
+
+  - type: textarea
+    id: impact
+    validations:
+      required: true
+    attributes:
+      label: How did you hit this?
+      description: What were you labeling, and what did the bug cost you?
+
+  - type: textarea
+    id: system-info
+    validations:
+      required: true
+    attributes:
+      label: System info
+      placeholder: |
+        Aquarela version: 0.1.0
+        Install: Docker, binary or from source
+        OS: macOS 15
+        Browser: Chrome 141
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked that this bug is not already reported in the [open issues](https://github.com/aquarelahq/aquarela/issues).
+          required: true
+        - label: I included the steps, the system info and complete error messages.
+          required: true
