@@ -22,11 +22,12 @@ closed. Typo and docs fixes can skip this.
 - [ ] I added a line under `[Unreleased]` in `CHANGELOG.md`.
 - [ ] I ticked `ROADMAP.md` if this finishes an item.
 - [ ] I added or updated tests where needed.
+- [ ] The PR changes fewer than 400 lines, or it does one thing that cannot be split.
 
 ## AI usage
 
-AI tools are welcome. For transparency, tick one.
+AI tools are welcome, and you are responsible for every line. Tick one.
 
 - [ ] No AI usage.
-- [ ] AI-assisted: AI suggested or improved parts, a person wrote and reviewed the PR.
-- [ ] AI-generated: AI wrote most or all of it, and a person reviewed it.
+- [ ] AI-assisted. AI suggested or improved parts, and I wrote and reviewed the PR.
+- [ ] AI-generated. AI wrote most or all of it, and I reviewed, understood and tested every line.

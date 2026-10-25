@@ -80,6 +80,43 @@ Every change, including the maintainer's, follows these steps.
 
 `main` must always build and run.
 
+## Pull request size
+
+A pull request does one thing. If its title needs an "and", it is probably
+two pull requests.
+
+Aim for fewer than 200 changed lines. The limit is 400. Reviews lose quality
+beyond that size, so bigger changes are split into a series of smaller pull
+requests that each build and pass CI on their own. Lockfiles, generated files
+and snapshots do not count toward the limit.
+
+CI fails when a pull request goes over 400 lines. Only the maintainer can
+allow an exception, by adding the `size/exception` label.
+
+## AI tools
+
+You may use any AI tool to write code, docs or tests. You are responsible for
+every line you submit, the same as if you had typed it yourself. That means
+you understand the whole change, can explain any part of it in review, and
+have run and tested it.
+
+Declare AI usage in the pull request template. Trivial help such as
+autocomplete, formatting or renaming does not need to be declared.
+
+Make sure the output does not copy code from others under a license that is
+not compatible with MIT, and that the terms of the tool allow you to
+contribute what it produced.
+
+The maintainer may ask you to explain any part of a pull request, and may
+close it without review if you cannot. Pull requests that were clearly not
+reviewed by a person are closed.
+
+This policy follows the
+[Linux Foundation guidance on generative AI](https://www.linuxfoundation.org/legal/generative-ai)
+and the Linux kernel guides on
+[tool-generated content](https://docs.kernel.org/process/generated-content.html)
+and [AI coding assistants](https://docs.kernel.org/process/coding-assistants.html).
+
 ## Development
 
 ### Web app
