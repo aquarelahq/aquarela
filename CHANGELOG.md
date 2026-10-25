@@ -16,7 +16,8 @@ All notable changes to Aquarela are listed here. The format follows
 - Contributing guide, issue and pull request templates, CI that builds the
   web app, and a check that PR titles follow Conventional Commits.
 - Policy on AI tools and a 400 line limit for pull requests, checked in CI.
-- Rust server skeleton with a health endpoint, checked in CI.
+- Server skeleton in Python (FastAPI) with a health endpoint, checked in CI.
+  It is the `aquarela` package on PyPI.
 
 ### Changed
 
