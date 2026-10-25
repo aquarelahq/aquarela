@@ -126,6 +126,9 @@ How it is built:
 
 Roles are `owner`, `labeler` and `reviewer`. All of them are free.
 
+The full schema is in [docs/data-model.md](docs/data-model.md) and the HTTP
+API in [docs/api.md](docs/api.md).
+
 ## Install
 
 With Docker:
@@ -167,6 +170,9 @@ require a rewrite.
 - Week 5. Docker image, binaries, docs, demo video. Release v0.1 and share it.
 - Weeks 6 to 10. Yjs sync, users and roles, review flow. Release v0.2.
 
+Progress is tracked in [ROADMAP.md](ROADMAP.md) and released changes in
+[CHANGELOG.md](CHANGELOG.md).
+
 ## Later
 
 AI-assisted labeling. Models (YOLO, SAM, or your own) run as separate services
@@ -180,7 +186,7 @@ after v0.2, on top of the collaboration core.
 core/        Rust workspace (server, sync, storage, export)
 web/         TypeScript web app
 deploy/      Dockerfile, Compose files
-docs/        Documentation
+docs/        Documentation (API, data model)
 ```
 
 ## Open questions
