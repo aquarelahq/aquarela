@@ -180,7 +180,7 @@ after v0.2, on top of the collaboration core.
 core/        Rust workspace (server, sync, storage, export)
 web/         TypeScript web app
 deploy/      Dockerfile, Compose files
-docs/        Documentation and the UI mock
+docs/        Documentation
 ```
 
 ## Open questions
