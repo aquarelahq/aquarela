@@ -1,6 +1,6 @@
 [project]
 name = "aquarela"
-version = "0.0.1"
+version = "0.0.2"
 description = "Open source data labeling tool. Paint, draw and label freely."
 readme = "README.md"
 license = "MIT"
