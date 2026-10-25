@@ -130,8 +130,19 @@ npm run build    # type check and production build, the same check CI runs
 
 ### Core (Rust)
 
-Not started yet. When it is, it will build with `cargo build` and must pass
-`cargo fmt --check`, `cargo clippy` and `cargo test`.
+```bash
+cd core
+cargo run        # http://127.0.0.1:8080/api/health
+cargo test
+```
+
+Before opening a pull request, run the same checks as CI:
+
+```bash
+cargo fmt --check
+cargo clippy --all-targets -- -D warnings
+cargo test
+```
 
 ## Code style
 

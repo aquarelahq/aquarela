@@ -4,6 +4,12 @@ Version 0.1. The core serves a JSON API under `/api`. All coordinates are in
 image pixels. IDs are ULIDs, so they are unique, sortable and can be created
 in the browser.
 
+## Health
+
+```
+GET    /api/health                    Answers "ok" when the server is running
+```
+
 ## Projects
 
 ```
