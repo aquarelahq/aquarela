@@ -1,0 +1,14 @@
+name: Bug
+description: Something does not work as expected
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+      description: What you did, what you expected and what you saw instead.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Version and browser
+      placeholder: Aquarela 0.1.0, Chrome 141 on macOS

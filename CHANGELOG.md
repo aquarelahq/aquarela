@@ -13,6 +13,8 @@ All notable changes to Aquarela are listed here. The format follows
   moving between images.
 - API and data model for v0.1.
 - Roadmap.
+- Contributing guide, issue and pull request templates, and CI that builds the
+  web app.
 
 ### Changed
 
