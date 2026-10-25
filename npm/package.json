@@ -1,0 +1,10 @@
+{
+  "name": "aquarela",
+  "version": "0.0.1",
+  "description": "Open source data labeling tool. Paint, draw and label freely.",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Percy Cubas",
+  "repository": { "type": "git", "url": "git+https://github.com/aquarelahq/aquarela.git" },
+  "files": ["index.js", "README.md", "LICENSE"]
+}

@@ -1,0 +1,15 @@
+[project]
+name = "aquarela"
+version = "0.0.1"
+description = "Open source data labeling tool. Paint, draw and label freely."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Percy Cubas" }]
+requires-python = ">=3.10"
+
+[project.urls]
+Homepage = "https://github.com/aquarelahq/aquarela"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

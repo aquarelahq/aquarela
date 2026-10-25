@@ -1,0 +1,8 @@
+[package]
+name = "aquarela"
+version = "0.0.1"
+edition = "2021"
+description = "Open source data labeling tool. Paint, draw and label freely."
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/aquarelahq/aquarela"
