@@ -19,6 +19,7 @@ All notable changes to Aquarela are listed here. The format follows
 - Server skeleton in Python (FastAPI) with a health endpoint, checked in CI.
   It is the `aquarela` package on PyPI.
 - SQLite schema as Alembic migrations that run when the server starts.
+- Project and class endpoints. Deleting a class that labels use answers 409.
 
 ### Changed
 
