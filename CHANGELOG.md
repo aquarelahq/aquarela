@@ -18,6 +18,7 @@ All notable changes to Aquarela are listed here. The format follows
 - Policy on AI tools and a 400 line limit for pull requests, checked in CI.
 - Server skeleton in Python (FastAPI) with a health endpoint, checked in CI.
   It is the `aquarela` package on PyPI.
+- SQLite schema as Alembic migrations that run when the server starts.
 
 ### Changed
 

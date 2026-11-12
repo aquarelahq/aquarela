@@ -4,3 +4,4 @@ target/
 *.tgz
 __pycache__/
 .venv/
+*.db
