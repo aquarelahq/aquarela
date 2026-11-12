@@ -10,7 +10,7 @@ links to its issue, and the issues of a version are grouped in a
 - [x] Image canvas with pan, zoom and boxes
 - [x] [API](docs/api.md) and [data model](docs/data-model.md)
 - [x] Server skeleton and CI ([#3](https://github.com/aquarelahq/aquarela/issues/3))
-- [ ] SQLite schema ([#4](https://github.com/aquarelahq/aquarela/issues/4))
+- [x] SQLite schema ([#4](https://github.com/aquarelahq/aquarela/issues/4))
 - [ ] Projects and classes API ([#5](https://github.com/aquarelahq/aquarela/issues/5))
 - [ ] Images API ([#6](https://github.com/aquarelahq/aquarela/issues/6))
 - [ ] Annotations API ([#7](https://github.com/aquarelahq/aquarela/issues/7))
