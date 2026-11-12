@@ -131,7 +131,7 @@ def test_patch_class_actualiza_nombre_color_y_tecla(client, tmp_path):
 
 def test_patch_class_position_cambia_el_orden(client, tmp_path):
     p = new_project(client, tmp_path)
-    a, b, c = (new_class(client, p["id"], n) for n in "abc")
+    _, _, c = (new_class(client, p["id"], n) for n in "abc")
     r = client.patch(classes_url(p["id"], c["id"]), json={"position": 0})
     assert r.status_code == 200
     names = [x["name"] for x in client.get(classes_url(p["id"])).json()]
@@ -161,8 +161,13 @@ def test_delete_class_en_uso_responde_409(client, tmp_path):
     assert len(items) == 1
     iid = items[0]["id"]
     ann = client.get(f"/api/images/{iid}/annotations").json()
-    shape = {"id": "01JB0000000000000000000000", "class_id": c["id"],
-             "type": "point", "x": 1, "y": 2}
+    shape = {
+        "id": "01JB0000000000000000000000",
+        "class_id": c["id"],
+        "type": "point",
+        "x": 1,
+        "y": 2,
+    }
     put = client.put(
         f"/api/images/{iid}/annotations",
         json={"version": ann["version"], "shapes": [shape]},
